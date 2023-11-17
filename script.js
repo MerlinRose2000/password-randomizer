@@ -1,11 +1,11 @@
 function generatePassword() {
     var possibleCharacters = [];
-    var specialCharacters = ['@', '%', '+', '\\', '/', '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.'];
+    var specialCharacters = [')', '(', '}', '{', ']', '[', '~', '-', '_', '.', '@', '%', '+', '\\', '/', '!', '#', '$', '^', '?', ':', ','];
     var uppercaseCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
     var lowercaseCharacters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
     var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
   
-    numberOfCharacters = prompt("How many characters do you want in your password? Choose between 8 and 128 characters");
+    numberOfCharacters = prompt("Choose between 8 and 128 characters for your new password");
     if (numberOfCharacters < 8 || numberOfCharacters > 128) {
       return "Please choose a valid number of characters";
     } else if (isNaN(numberOfCharacters)) {
@@ -48,7 +48,7 @@ function generatePassword() {
       alert("Your password will NOT have numbers");
     }
   
-    if (special === false && uppercase === false && lowercase === false && numbers === false) {
+    if (special == false && uppercase == false && lowercase == false && numbers == false) {
       return "Please select at least one character type";
     };
 
@@ -67,8 +67,8 @@ function generatePassword() {
     
     let finalPassword = ""
     for (let i = 0; i < numberOfCharacters; i++) {
-      let rng =[Math.floor(Math.random() * possibleCharacters.length)];
-      finalPassword = finalPassword + possibleCharacters[rng];
+      let nmbr =[Math.floor(Math.random() * possibleCharacters.length)];
+      finalPassword = finalPassword + possibleCharacters[nmbr];
     }
     return finalPassword;
   };
